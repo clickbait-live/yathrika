@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yathrika - On-Route Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">YATHRIKA</div>
+            <p>On-Route Delivery Service for KSRTC Passengers</p>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-link" data-section="groceries">Groceries</a>
+        <a href="#" class="nav-link" data-section="medicines">Medicines</a>
+        <a href="#" class="nav-link" data-section="food">Food</a>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Groceries Section -->
+        <div id="groceries" class="main-content">
+            <h2>Groceries</h2>
+            <div class="product-grid">
+                <!-- Grocery items will be loaded here -->
+            </div>
+        </div>
+        
+        <!-- Medicines Section -->
+        <div id="medicines" class="main-content">
+            <h2>Medicines</h2>
+            <div class="prescription-upload" id="prescriptionUpload">
+                <i class="fas fa-file-prescription"></i>
+                <h3>Upload Prescription</h3>
+                <p>Click here to upload or take a photo of your prescription</p>
+                <input type="file" id="prescriptionFile" accept="image/*" capture="camera" style="display: none;">
+            </div>
+            <div class="product-grid" id="medicineGrid" style="display: none;">
+                <!-- Medicine items will be loaded here -->
+            </div>
+        </div>
+        
+        <!-- Food Section -->
+        <div id="food" class="main-content">
+            <h2>Food - Wraps & Rolls</h2>
+            <div class="product-grid">
+                <!-- Food items will be loaded here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Shopping Cart -->
+    <div class="cart" id="cart">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <span id="cartClose"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-total">
+            Delivery Fee: ₹15
+            <div>Total: ₹<span id="cartTotal">0</span></div>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Place Order via WhatsApp</button>
+    </div>
+    
+    <!-- Cart Icon -->
+    <div class="cart-icon" style="position: fixed; bottom: 20px; right: 20px; background-color: #d9232d; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.2); z-index: 999;">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount" style="position: absolute; top: -5px; right: -5px; background-color: white; color: #d9232d; width: 20px; height: 20px; border-radius: 50%; font-size: 12px; display: flex; justify-content: center; align-items: center;">0</span>
+    </div>
+    
+    <!-- Bus Info Modal -->
+    <div class="modal" id="busModal">
+        <div class="modal-content">
+            <h2 class="modal-title">Welcome to Yathrika!</h2>
+            <p>Please provide your bus details to continue:</p>
+            <div class="form-group">
+                <label for="busNumber">Bus Number:</label>
+                <input type="text" id="busNumber" placeholder="Enter bus number (e.g., KL-15-1234)">
+            </div>
+            <div class="form-group">
+                <label for="nextStand">Next Bus Stand:</label>
+                <select id="nextStand">
+                    <option value="">Select your next bus stand</option>
+                    <option value="Attingal">Attingal</option>
+                    <option value="Kollam">Kollam</option>
+                    <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                    <option value="Ernakulam">Ernakulam</option>
+                    <option value="Thrissur">Thrissur</option>
+                    <option value="Kozhikode">Kozhikode</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="arrivalTime">Expected Arrival Time:</label>
+                <input type="time" id="arrivalTime">
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn secondary-btn" id="cancelBusInfo">Cancel</button>
+                <button class="modal-btn primary-btn" id="submitBusInfo">Continue</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Category Selection Modal -->
+    <div class="modal" id="categoryModal">
+        <div class="modal-content">
+            <h2 class="modal-title">What would you like to order?</h2>
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                <button class="modal-btn primary-btn" id="groceriesBtn" style="text-align: left; justify-content: flex-start;">
+                    <i class="fas fa-shopping-basket" style="margin-right: 10px;"></i> Groceries
+                </button>
+                <button class="modal-btn primary-btn" id="medicinesBtn" style="text-align: left; justify-content: flex-start;">
+                    <i class="fas fa-pills" style="margin-right: 10px;"></i> Medicines
+                </button>
+                <button class="modal-btn primary-btn" id="foodBtn" style="text-align: left; justify-content: flex-start;">
+                    <i class="fas fa-utensils" style="margin-right: 10px;"></i> Food (Wraps & Rolls)
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
