@@ -19,7 +19,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #d9232d; /* KSRTC red */
+    background-color: #d9232d;
     color: white;
     padding: 15px 0;
     text-align: center;
@@ -287,19 +287,60 @@ nav a:hover, nav a.active {
     border: none;
 }
 
+/* Medicine Options Styles */
+.medicine-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+.medicine-option-btn {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #d9232d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+.medicine-option-btn i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+.medicine-form {
+    display: none;
+    margin-top: 20px;
+}
+.medicine-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.submit-medicine-btn {
+    background-color: #d9232d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
         align-items: center;
     }
-    
     nav a {
         margin: 5px 0;
         width: 100%;
         text-align: center;
     }
-    
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
