@@ -28,31 +28,35 @@
         <!-- Groceries Section -->
         <div id="groceries" class="main-content">
             <h2>Groceries</h2>
-            <div class="product-grid">
-                <!-- Grocery items will be loaded here -->
-            </div>
+            <div class="product-grid"></div>
         </div>
         
         <!-- Medicines Section -->
         <div id="medicines" class="main-content">
             <h2>Medicines</h2>
-            <div class="prescription-upload" id="prescriptionUpload">
-                <i class="fas fa-file-prescription"></i>
-                <h3>Upload Prescription</h3>
-                <p>Click here to upload or take a photo of your prescription</p>
-                <input type="file" id="prescriptionFile" accept="image/*" capture="camera" style="display: none;">
+            <div class="medicine-options" id="medicineOptions">
+                <button class="medicine-option-btn" id="uploadPrescriptionBtn">
+                    <i class="fas fa-file-prescription"></i> Upload Prescription
+                </button>
+                <button class="medicine-option-btn" id="mentionMedsBtn">
+                    <i class="fas fa-pen"></i> Mention Your Medicines
+                </button>
+                <button class="medicine-option-btn" id="chooseOptionsBtn">
+                    <i class="fas fa-list"></i> Choose From Options
+                </button>
             </div>
-            <div class="product-grid" id="medicineGrid" style="display: none;">
-                <!-- Medicine items will be loaded here -->
+            <div class="medicine-form" id="mentionMedsForm">
+                <h3>Enter Medicine Details</h3>
+                <textarea id="medicineDetails" rows="5" placeholder="Please enter the names and quantities of medicines you need..."></textarea>
+                <button class="submit-medicine-btn" id="submitMedsBtn">Send via WhatsApp</button>
             </div>
+            <div class="product-grid" id="medicineGrid" style="display: none;"></div>
         </div>
         
         <!-- Food Section -->
         <div id="food" class="main-content">
             <h2>Food - Wraps & Rolls</h2>
-            <div class="product-grid">
-                <!-- Food items will be loaded here -->
-            </div>
+            <div class="product-grid"></div>
         </div>
     </div>
     
@@ -62,9 +66,7 @@
             <h3>Your Order</h3>
             <span id="cartClose"><i class="fas fa-times"></i></span>
         </div>
-        <div class="cart-items" id="cartItems">
-            <!-- Cart items will be loaded here -->
-        </div>
+        <div class="cart-items" id="cartItems"></div>
         <div class="cart-total">
             Delivery Fee: ₹15
             <div>Total: ₹<span id="cartTotal">0</span></div>
